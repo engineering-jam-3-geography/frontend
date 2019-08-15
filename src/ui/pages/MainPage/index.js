@@ -25,7 +25,7 @@ const MainPage = () => (
 
         <h3>This is example of image</h3>
 
-        <img src={img} width="400" height="200" />
+        <img src={img} width="400" height="200" alt="some text" />
 
         <br />
 
@@ -39,7 +39,7 @@ const MainPage = () => (
 
         <h3>This is example of svg file</h3>
 
-        <img src={svgImg} width="400" height="200" />
+        <img src={svgImg} width="400" height="200" alt="some text" />
 
         <br />
 
