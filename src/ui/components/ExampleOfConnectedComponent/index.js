@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import flow from 'lodash/flow';
 import {connect} from 'react-redux';
-import {showPasswordModal, hidePasswordModal} from '../../../redux/actions/modals'
+import {showPasswordModal, hidePasswordModal} from '../../../redux/actions/modals';
 
 const ExampleOfConnectedComponent = ({
     isHidden,
