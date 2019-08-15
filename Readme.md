@@ -1,4 +1,4 @@
-# Engineering jam 3 geography
+# Engineering jam 3 geography (frontend)
 
 1. git clone git@github.com:engineering-jam-3-geography/frontend.git
 2. npm i
