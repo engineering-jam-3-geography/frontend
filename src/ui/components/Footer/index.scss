@@ -1,0 +1,9 @@
+@import '../../assets/sass/base/variables';
+@import '../../assets/sass/base/mixins';
+$FooterNavigation: '.FooterNavigation';
+
+$Footer: '.Footer';
+
+#{$Footer} {
+    background-color: blue;
+}

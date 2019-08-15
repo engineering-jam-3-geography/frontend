@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> UI Component Layout. 1`] = `
+<div
+  className="Layout"
+>
+  <Connect(Header) />
+  <Main>
+    <div>
+      Here goes children!
+    </div>
+  </Main>
+  <Footer
+    isExtended={false}
+  />
+  <div
+    className="Layout__error"
+  >
+    <Connect(ErrorMessage) />
+  </div>
+  <div
+    className="Layout__modal"
+  >
+    <Connect(PasswordModal) />
+  </div>
+</div>
+`;

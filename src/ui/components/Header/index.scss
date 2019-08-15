@@ -1,0 +1,8 @@
+@import '../../assets/sass/base/variables';
+@import '../../assets/sass/base/mixins';
+
+$Header: '.Header';
+
+#{$Header} {
+    background-color: green;
+}

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SpriteIcon /> UI Component SpriteIcon with className. 1`] = `
+<svg
+  className="icon"
+  focusable="false"
+  height="50"
+  width="50"
+>
+  <use
+    xlinkHref="#ico-about-us"
+  />
+</svg>
+`;
+
+exports[`<SpriteIcon /> UI Component SpriteIcon with size. 1`] = `
+<svg
+  focusable="false"
+  height="50"
+  width="50"
+>
+  <use
+    xlinkHref="#ico-about-us"
+  />
+</svg>
+`;
+
+exports[`<SpriteIcon /> UI Component SpriteIcon. 1`] = `
+<svg
+  focusable="false"
+>
+  <use
+    xlinkHref="#ico-about-us"
+  />
+</svg>
+`;

@@ -1,0 +1,118 @@
+@import 'family.scss';
+
+@mixin link {
+    color: map-get($colors, black);
+    text-decoration: underline;
+
+    &:hover {
+        color: map-get($colors, black);
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: map-get($colors, black);
+    }
+}
+
+@function unfoldTransition ($transition) {
+    // Default values
+    $property: all;
+    $duration: 0.3s;
+    $easing: ease; // Browser default is ease, which is what we want
+    $delay: null; // Browser default is 0, which is what we want
+    $defaultProperties: ($property, $duration, $easing, $delay);
+
+    // Grab transition properties if they exist
+    $unfoldedTransition: ();
+
+    @for $i from 1 through length($defaultProperties) {
+        $p: null;
+
+        @if $i <= length($transition) {
+            $p: nth($transition, $i);
+        }
+        @else {
+            $p: nth($defaultProperties, $i);
+        }
+
+        $unfoldedTransition: append($unfoldedTransition, $p);
+    }
+
+    @return $unfoldedTransition;
+}
+
+@mixin transition($transitions...) {
+    $unfoldedTransitions: ();
+
+    @each $transition in $transitions {
+        // stylelint-disable-next-line function-name-case
+        $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
+    }
+
+    transition: $unfoldedTransitions;
+}
+
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    }
+    @else {
+        @error "Не указано значение для '#{$breakpoint}'.";
+    }
+}
+
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+// Font face
+@mixin fontFace($fontsList) {
+    @each $fontDir, $fontMap in $fontsList {
+
+        @each $label, $map in $fontMap {
+
+            $fontName: map-get($map, name);
+            $fontType: map-get($map, type);
+            $fontWeight: map-get($map, weight);
+            $fontStyle: map-get($map, style);
+
+            @font-face {
+                font-family: $fontName;
+                src: url('#{$fontPath}#{$fontDir}/#{$fontType}/#{$fontType}.eot');
+                src:
+                    url('#{$fontPath}#{$fontDir}/#{$fontType}/#{$fontType}.eot?#iefix') format('embedded-opentype'),
+                    url('#{$fontPath}#{$fontDir}/#{$fontType}/#{$fontType}.svg##{$fontName}') format('svg'),
+                    url('#{$fontPath}#{$fontDir}/#{$fontType}/#{$fontType}.woff2') format('woff2'),
+                    url('#{$fontPath}#{$fontDir}/#{$fontType}/#{$fontType}.woff') format('woff'),
+                    url('#{$fontPath}#{$fontDir}/#{$fontType}/#{$fontType}.ttf') format('truetype');
+                font-weight: $fontWeight;
+                font-style: $fontStyle;
+            }
+        }
+    }
+}
+
+@mixin respond-to-hover {
+    @media (hover), (min-width: 0\0), (min--moz-device-pixel-ratio:0) { // stylelint-disable-line
+        @content;
+    }
+}
