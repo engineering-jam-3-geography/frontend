@@ -28,6 +28,7 @@
         "connected-react-router": "^4.3.0",
         "core-js": "^2.5.7",
         "dayjs": "^1.7.7",
+        "google-maps-react": "^2.0.2",
         "history": "^4.7.2",
         "lodash": "^4.17.10",
         "match-media": "^0.2.0",
@@ -35,6 +36,7 @@
         "prop-types": "^15.6.0",
         "react": "^16.0.0",
         "react-dom": "^16.0.0",
+        "react-google-maps": "^9.4.5",
         "react-hot-loader": "^4.3.2",
         "react-modal": "^3.8.1",
         "react-redux": "^5.0.6",
@@ -47,6 +49,8 @@
         "redux-thunk": "^2.3.0"
     },
     "devDependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.5.5",
+        "@babel/preset-stage-2": "^7.0.0",
         "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
