@@ -1,0 +1,23 @@
+@import '../../assets/sass/base/variables';
+@import '../../assets/sass/base/mixins';
+
+$MapTextItem: '.MapTextItem';
+
+#{$MapTextItem} {
+    &__field {
+        position: relative;
+        width: 222px;
+        z-index: 999;
+    }
+
+    &__input {
+        width: 100%;
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 3px;
+    }
+}
