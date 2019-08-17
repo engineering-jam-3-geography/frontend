@@ -13,20 +13,28 @@ import './index.scss';
  * @return {JSX}
  */
 const Layout = ({
+    disableHeader,
+    disableFooter,
     children
 }) => (
     <div className="Layout">
-        <Header />
+        {!disableHeader && (
+            <Header />
+        )}
 
         <Main>
             {children}
         </Main>
 
-        <Footer />
+        {!disableFooter && (
+            <Footer />
+        )}
     </div>
 );
 
 Layout.propTypes = {
+    disableHeader: PropTypes.bool,
+    disableFooter: PropTypes.bool,
     children: PropTypes.node
 };
 

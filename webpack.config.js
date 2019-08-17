@@ -17,8 +17,8 @@ const PATHS = {
 
 const FONTS = [
     {
-        name: 'muli',
-        styles: ['bold', 'italic', 'regular']
+        name: 'montserrat',
+        styles: ['bold', 'italic', 'light', 'medium', 'regular', 'semibold']
     }
 ];
 
