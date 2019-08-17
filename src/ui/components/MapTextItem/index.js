@@ -9,7 +9,8 @@ import Input from '../Input';
 import Button from '../Button';
 import './index.scss';
 
-const MapTextItemItem = ({
+const MapTextItem = ({
+    id,
     paths,
     options,
     center,
@@ -20,7 +21,7 @@ const MapTextItemItem = ({
     onChange,
     onFocus,
     onBlur,
-    onAddAnswer
+    onAnswer
 }) => {
     const fieldClass = Classnames({
         MapTextItem__field: true,
@@ -37,7 +38,7 @@ const MapTextItemItem = ({
             {isOpened && (
                 <InfoBox
                     defaultPosition={center}
-                    options={{closeBoxURL: '', enableEventPropagation: false}}>
+                    options={{closeBoxURL: '', enableEventPropagation: true}}>
                     <div className={fieldClass}>
                         <div className="MapTextItem__input">
                             <Input
@@ -47,19 +48,22 @@ const MapTextItemItem = ({
                                 onBlur={onBlur} />
                         </div>
 
-                        {isFocused && (
-                            <div className="MapTextItem__button">
-                                <Button
-                                    text="Сохранить"
-                                    disabled={!value}
-                                    onClick={() => {
-                                        onAddAnswer({
+
+                        <div className="MapTextItem__button">
+                            <Button
+                                text="Сохранить"
+                                disabled={!value}
+                                onClick={() => {
+                                    onAnswer({
+                                        id,
+                                        type: 'MAP_TEXT',
+                                        value: {
                                             text: value,
-                                            location: ''
-                                        });
-                                    }} />
-                            </div>
-                        )}
+                                            location: '50.45466,30.5238'
+                                        }
+                                    });
+                                }} />
+                        </div>
                     </div>
                 </InfoBox>
             )}
@@ -67,7 +71,8 @@ const MapTextItemItem = ({
     );
 };
 
-MapTextItemItem.propTypes = {
+MapTextItem.propTypes = {
+    id: PropTypes.number,
     paths: PropTypes.array,
     options: PropTypes.object,
     isOpened: PropTypes.bool,
@@ -75,7 +80,7 @@ MapTextItemItem.propTypes = {
     value: PropTypes.string,
     center: PropTypes.object,
     onOpen: PropTypes.func,
-    onAddAnswer: PropTypes.func,
+    onAnswer: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func
@@ -103,4 +108,4 @@ export default flow(
             })
         }
     )
-)(MapTextItemItem);
+)(MapTextItem);

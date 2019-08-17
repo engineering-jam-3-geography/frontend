@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Classnames from 'classnames';
 import flow from 'lodash/flow';
-import {compose, withProps} from 'recompose';
+import find from 'lodash/find';
+import {compose, withProps, withStateHandlers} from 'recompose';
 import {connect} from 'react-redux';
 import {withGoogleMap, GoogleMap} from 'react-google-maps';
 import MapTextItem from '../MapTextItem';
@@ -23,7 +24,7 @@ const MapText = compose(
     // interactions,
     // level,
     visuals,
-    onAddAnswer
+    onAnswer
 }) => {
     const componentClass = Classnames({
         MapText: true
@@ -42,6 +43,7 @@ const MapText = compose(
                         visuals.map((visual, idx) => (
                             <MapTextItem
                                 key={idx}
+                                id={idx}
                                 paths={visual.location}
                                 center={getPolygonCenter(visual.location)}
                                 options={{
@@ -51,7 +53,7 @@ const MapText = compose(
                                     fillColor: '#FF0000',
                                     fillOpacity: 0.35
                                 }}
-                                onAddAnswer={onAddAnswer(id)} />
+                                onAnswer={onAnswer} />
                         ))
                     }
                 </GoogleMap>
@@ -70,18 +72,36 @@ MapText.propTypes = {
 };
 
 export default flow(
+    withStateHandlers(
+        ({id}) => ({
+            result: {
+                task_id: id,
+                answers: []
+            }
+        }),
+        {
+            onAnswer: (state) => (answer) => {
+                const answers = (find(state.result.answers, (a) => a.id === answer.id))
+                    ? state.result.answers.map((a) => {
+                        const result = a.id !== answer.id ? a : answer;
+
+                        return result;
+                    })
+                    : [...state.result.answers, answer];
+
+                return {
+                    result: {
+                        ...state.result,
+                        answers
+                    }
+                };
+            }
+        }
+    ),
     connect(
         null,
         (dispatch) => ({
-            onAddAnswer: (taskId) => ({text, location}) => dispatch(addAnswer({
-                taskId,
-                answers: [
-                    {
-                        text,
-                        location
-                    }
-                ]
-            }))
+            onSubmitTask: (answer) => dispatch(addAnswer(answer))
         })
     )
 )(MapText);
