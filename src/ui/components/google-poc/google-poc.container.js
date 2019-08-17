@@ -13,7 +13,6 @@ class GoogleContainer extends Component {
             shouldRenderRightClickActions: false,
             currentClickCoord: {},
         };
-        this.handleDragEnd = this.handleDragEnd.bind(this);
     }
 
     render() {
