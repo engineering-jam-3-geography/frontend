@@ -17,6 +17,7 @@ const MapTextItem = ({
     isOpened,
     isFocused,
     value,
+    location,
     onOpen,
     onChange,
     onFocus,
@@ -59,7 +60,7 @@ const MapTextItem = ({
                                         type: 'MAP_TEXT',
                                         value: {
                                             text: value,
-                                            location: '50.45466,30.5238'
+                                            location
                                         }
                                     });
                                 }} />
@@ -78,6 +79,7 @@ MapTextItem.propTypes = {
     isOpened: PropTypes.bool,
     isFocused: PropTypes.bool,
     value: PropTypes.string,
+    location: PropTypes.string,
     center: PropTypes.object,
     onOpen: PropTypes.func,
     onAnswer: PropTypes.func,
@@ -90,13 +92,18 @@ export default flow(
     withStateHandlers(
         () => ({
             isOpened: false,
-            value: ''
+            value: '',
+            location: ''
         }),
         {
-            onOpen: () => () => ({
-                isOpened: true,
-                isFocused: false
-            }),
+            onOpen: () => (event = {}) => {
+                const {latLng = {}} = event;
+
+                return {
+                    isOpened: true,
+                    location: `${latLng.lat()}, ${latLng.lng()}`
+                };
+            },
             onFocus: () => () => ({
                 isFocused: true
             }),
