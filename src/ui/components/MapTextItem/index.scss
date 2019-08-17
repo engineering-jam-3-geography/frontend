@@ -2,12 +2,21 @@
 @import '../../assets/sass/base/mixins';
 
 $MapTextItem: '.MapTextItem';
+$Input: '.Input';
 
 #{$MapTextItem} {
     &__field {
         position: relative;
         width: 222px;
         z-index: 999;
+    }
+
+    &__field_state_focused {
+        #{$Input} {
+            &__input {
+                padding-right: 100px;
+            }
+        }
     }
 
     &__input {
