@@ -10,7 +10,7 @@ const MainPage = () => (
     <Layout>
         <h1>This main page!</h1>
 
-        <Link to="">Go to Topic 1</Link>
+        <Link to="/task/1">Go to Topic 1</Link>
     </Layout>
 );
 

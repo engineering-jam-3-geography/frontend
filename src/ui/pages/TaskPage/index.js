@@ -12,7 +12,7 @@ const TaskPage = ({
     <Layout>
         <h1>This task page!</h1>
 
-        <p>Current task is: {taskId}</p>
+        <p>Current task id is: {taskId}</p>
     </Layout>
 );
 
