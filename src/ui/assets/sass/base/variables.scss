@@ -1,33 +1,42 @@
 // Font-face
 $fontPath: '../fonts/';
 $fontList: (
-    muli: (
+    montserrat: (
         bold: (
-            name: 'mulibold',
-            type: 'bold',
-            weight: 700,
-            style: normal
+            name: 'montserratbold',
+            type: 'bold'
         ),
         italic: (
-            name: 'muliitalic',
-            type: 'italic',
-            weight: 400,
-            style: italic
+            name: 'montserratitalic',
+            type: 'italic'
+        ),
+        light: (
+            name: 'montserratlight',
+            type: 'light'
+        ),
+        medium: (
+            name: 'montserratmedium',
+            type: 'medium'
         ),
         regular: (
-            name: 'muliregular',
-            type: 'regular',
-            weight: 400,
-            style: normal
+            name: 'montserratregular',
+            type: 'regular'
+        ),
+        semibold: (
+            name: 'montserratsemibold',
+            type: 'semibold'
         )
     )
 );
 
 // Font-family
 $font-family: (
-    bold: #{'mulibold', Helvetica, Arial, sans-serif},
-    italic: #{'muliitalic', Helvetica, Arial, sans-serif},
-    regular: #{'muliregular', Helvetica, Arial, sans-serif}
+    bold: #{'montserratbold', Helvetica, Arial, sans-serif},
+    italic: #{'montserratitalic', Helvetica, Arial, sans-serif},
+    light: #{'montserratlight', Helvetica, Arial, sans-serif},
+    medium: #{'montserratmedium', Helvetica, Arial, sans-serif},
+    regular: #{'montserratregular', Helvetica, Arial, sans-serif},
+    semibold: #{'montserratsemibold', Helvetica, Arial, sans-serif},
 );
 
 // Font-size
@@ -75,7 +84,11 @@ $line-height: (
 $colors: (
     white: #FFFFFF,
     black: #000000,
-    error: #FF3F5D
+    error: #FF3F5D,
+    picton-blue: #4ED0F4,
+    bon-jour: #E7E5E6,
+    denim: #157FB8,
+    cerulean: #0D8FDB
 );
 
 // Global
