@@ -1,4 +1,4 @@
-// import actionTypes from '../../actions/types';
+import actionTypes from '../../actions/types';
 
 const initialState = {
     list: []
@@ -12,6 +12,15 @@ const initialState = {
  */
 const answersReducer = (state = initialState, action = {}) => {
     switch (action.type) {
+    case actionTypes.ADD_ANSWER:
+        return {
+            ...state,
+            list: [
+                ...state.list,
+                action.payload
+            ]
+        };
+
     // case actionTypes.SHOW_PASSWORD_MODAL:
     //     return {
     //         ...state,
