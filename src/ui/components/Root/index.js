@@ -5,6 +5,7 @@ import {hot} from 'react-hot-loader';
 import store, {history} from '../../../redux/store';
 import ScrollToTop from '../ScrollToTop';
 import Routes from '../Routes';
+import Map from '../google-poc';
 
 /**
  * Renders root component
@@ -13,9 +14,10 @@ import Routes from '../Routes';
 const Root = () => (
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <ScrollToTop>
-                <Routes />
-            </ScrollToTop>
+            {/* <ScrollToTop> */}
+                {/* <Routes /> */}
+                <Map />
+            {/* </ScrollToTop> */}
         </ConnectedRouter>
     </Provider>
 );
