@@ -1,0 +1,27 @@
+@import '../../assets/sass/base/variables';
+@import '../../assets/sass/base/mixins';
+
+$Button: '.Button';
+
+#{$Button} {
+    display: inline-block;
+    padding: 9px 11px;
+    font-family: map-get($font-family, bold);
+    font-size: map-get($font-size, preextrasmall);
+    line-height: map-get($line-height, prelittle);
+    color: map-get($colors, white);
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    appearance: none;
+    border: none;
+    border-radius: 19px;
+    background-color: map-get($colors, sushi);
+
+    &#{$Button}_state_disabled {
+        pointer-events: none;
+        background-color: map-get($colors, alto);
+        cursor: not-allowed;
+    }
+}

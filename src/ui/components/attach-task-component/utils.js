@@ -36,6 +36,7 @@ export const defaultStyles =
     }
 ];
 
+/* eslint-disable */
 export const getTask = () => ({
     id: 'uuid',
     description: 'Соотнести зависимые территории с их статусом и стрелочками связать с метрополиями',
@@ -68,3 +69,4 @@ export const getTask = () => ({
         }
     ]
 });
+/* eslint-enable */

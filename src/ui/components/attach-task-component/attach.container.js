@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
 import MapContainer from './attach.component';
 
@@ -59,9 +58,5 @@ class GoogleContainer extends Component {
         );
     }
 }
-
-GoogleContainer.propTypes = {
-
-};
 
 export default GoogleContainer;

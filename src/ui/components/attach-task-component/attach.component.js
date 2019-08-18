@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withScriptjs, withGoogleMap, GoogleMap, Polyline, Marker, Polygon} from 'react-google-maps';
+import {withScriptjs, withGoogleMap, GoogleMap, Polyline, Marker} from 'react-google-maps';
 
 // import InfoBox from 'react-google-maps/lib/components/addons/InfoBox';
 import './component.scss';
