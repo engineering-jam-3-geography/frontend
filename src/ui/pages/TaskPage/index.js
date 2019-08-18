@@ -5,6 +5,7 @@ import find from 'lodash/find';
 import {connect} from 'react-redux';
 import Layout from '../../components/Layout';
 import MapText from '../../components/MapText';
+import CardForm from '../../components/card-task-components/card-task.container';
 
 /**
  * Renders task page
@@ -20,7 +21,10 @@ const TaskPage = ({
         <Layout
             disableHeader
             disableFooter>
-            <MapText {...currentTask} />
+
+            <CardForm />
+
+            {/*<MapText {...currentTask} />*/}
         </Layout>
     );
 };

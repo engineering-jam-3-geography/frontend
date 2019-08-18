@@ -1,18 +1,69 @@
-.form {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
+@import '../../assets/sass/base/variables';
+@import '../../assets/sass/base/mixins';
+
+$CardForm: '.CardForm';
+
+#{$CardForm} {
+    display: block;
+
+    &__header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 66px;
+        padding-left: 30px;
+        border-top-left-radius: 29px;
+        border-top-right-radius: 29px;
+        background-color: map-get($colors, denim);
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 3px;
+            right: 3px;
+            top: 0;
+            bottom: 0;
+            background-color: map-get($colors, cerulean);
+            border-top-left-radius: 29px;
+            border-top-right-radius: 29px;
+        }
+    }
+
+    &__title {
+        position: relative;
+        font-family: map-get($font-family, bold);
+        font-size: map-get($font-size, small);
+        line-height: map-get($line-height, prelittle);
+        color: map-get($colors, white);
+    }
+
+    &__content {
+        padding: 0 3px 3px;
+        background-color: map-get($colors, bon-jour);
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    &__contentInner {
+        position: relative;
+        width: 100%;
+        padding: 30px 30px;
+        border-bottom-left-radius: 29px;
+        border-bottom-right-radius: 29px;
+        background-color: map-get($colors, white);
+    }
+
+    &__description {
+        font-family: map-get($font-family, bold);
+        font-size: map-get($font-size, predefault);
+        line-height: map-get($line-height, small);
+        color: map-get($colors, mine-shaft);
+    }
 }
 
 .button {
     width: 50%;
     margin-bottom: 10px;
-}
-
-.taskHead {
-    background-color: blue;
-    height: 15%;
-    width: 100%;
 }
