@@ -6,7 +6,7 @@ import {withStateHandlers} from 'recompose';
 import {Polygon} from 'react-google-maps';
 import {InfoBox} from 'react-google-maps/lib/components/addons/InfoBox';
 import Input from '../Input';
-import Button from '../Button';
+import SpriteIcon from '../SpriteIcon';
 import './index.scss';
 
 const MapTextItem = ({
@@ -59,10 +59,9 @@ const MapTextItem = ({
                         </div>
 
 
-                        <div className="MapTextItem__button">
-                            <Button
-                                text="Сохранить"
-                                disabled={!value}
+                        <div className="MapTextItem__action">
+                            <button
+                                className="MapTextItem__button"
                                 onClick={() => {
                                     onAnswer({
                                         id,
@@ -72,7 +71,10 @@ const MapTextItem = ({
                                             location
                                         }
                                     });
-                                }} />
+                                }}>
+                                <SpriteIcon
+                                    iconLink="#ico-checkmark" />
+                            </button>
                         </div>
                     </div>
                 </InfoBox>
