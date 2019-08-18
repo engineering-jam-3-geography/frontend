@@ -2,6 +2,7 @@
 @import '../../assets/sass/base/mixins';
 
 $CardForm: '.CardForm';
+$Question: '.Question';
 
 #{$CardForm} {
     display: block;
@@ -61,9 +62,40 @@ $CardForm: '.CardForm';
         line-height: map-get($line-height, small);
         color: map-get($colors, mine-shaft);
     }
+
+    &__questions {
+        padding-top: 20px;
+    }
 }
 
-.button {
-    width: 50%;
-    margin-bottom: 10px;
+#{$Question} {
+    &__title {
+        margin-bottom: 10px;
+        font-family: map-get($font-family, regular);
+        font-size: map-get($font-size, predefault);
+        line-height: map-get($line-height, small);
+        color: map-get($colors, mine-shaft);
+    }
+
+    &__option {
+        display: flex;
+        margin-bottom: 5px;
+
+        @include f-last(1) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__input {
+        position: relative;
+        top: -2px;
+    }
+
+    &__text {
+        padding-left: 8px;
+        font-family: map-get($font-family, regular);
+        font-size: map-get($font-size, predefault);
+        line-height: map-get($line-height, small);
+        color: map-get($colors, mine-shaft);
+    }
 }
