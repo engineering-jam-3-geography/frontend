@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import MapContainer from './attach.component';
 
-import {defaultStyles, handleSaveCurrentCoords} from './utils';
+import {defaultStyles, handleSaveCurrentCoords, getTask} from './utils';
 
 class GoogleContainer extends Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class GoogleContainer extends Component {
             lineEnd: undefined,
             lineEndTemp: {},
             shouldHandleMouseMove: true,
+            task: getTask(),
         };
         this.handleClick = this.handleClick.bind(this);
         this.onCancelSelectionClick = this.onCancelSelectionClick.bind(this);
@@ -57,5 +59,9 @@ class GoogleContainer extends Component {
         );
     }
 }
+
+GoogleContainer.propTypes = {
+
+};
 
 export default GoogleContainer;

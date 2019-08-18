@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withScriptjs, withGoogleMap, GoogleMap, Polyline, Marker} from 'react-google-maps';
+import {withScriptjs, withGoogleMap, GoogleMap, Polyline, Marker, Polygon} from 'react-google-maps';
 
 // import InfoBox from 'react-google-maps/lib/components/addons/InfoBox';
 import './component.scss';
@@ -17,14 +17,12 @@ const MyMapComponent = ({defaultOptions, lineStart, lineEnd, handleMapClick, onC
                 {
                     lineStart && lineEnd &&
                     <Polyline
-                        path={[lineStart, lineEnd]}
-                    />
+                        path={[lineStart, lineEnd]} />
                 }
                 {
                     lineStart && !lineEnd &&
                     <Marker
-                        position={lineStart}
-                    />
+                        position={lineStart} />
                 }
                 <div className="button">
                     <button onClick={onCancelSelectionClick}>Click to cancel selection.</button>

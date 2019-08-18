@@ -1,7 +1,7 @@
-// import actionTypes from '../../actions/types';
+import actionTypes from '../../actions/types';
 
 const initialState = {
-    list: []
+    answers: []
 };
 
 /**
@@ -12,14 +12,13 @@ const initialState = {
  */
 const answersReducer = (state = initialState, action = {}) => {
     switch (action.type) {
-    // case actionTypes.SHOW_PASSWORD_MODAL:
-    //     return {
-    //         ...state,
-    //         passwordModal: {
-    //             isHidden: false
-    //         }
-    //     };
-
+    case actionTypes.SAVE_ANSWER:
+        return {
+            ...state,
+            answers: [
+                ...state.answers,
+                action.payload,
+            ]};
     default:
         return state;
     }
