@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Classnames from 'classnames';
 import flow from 'lodash/flow';
 import find from 'lodash/find';
+import {withRouter} from 'react-router-dom';
 import {compose, withProps, withStateHandlers} from 'recompose';
 import {connect} from 'react-redux';
 import {withGoogleMap, GoogleMap} from 'react-google-maps';
@@ -10,6 +11,7 @@ import MapTextItem from '../MapTextItem';
 import CardForm from './../card-form';
 import getPolygonCenter from '../../utils/getPolygonCenter';
 import {addAnswer} from '../../../redux/actions/answers';
+import redirect from '../../utils/redirect';
 import './index.scss';
 
 const MapText = compose(
@@ -24,6 +26,7 @@ const MapText = compose(
     description,
     visuals,
     result,
+    history,
     onAnswer,
     onSubmitTask
 }) => {
@@ -63,7 +66,11 @@ const MapText = compose(
             <div className="MapText__task">
                 <CardForm
                     description={description}
-                    onSubmit={() => onSubmitTask(result)} />
+                    onSubmit={() => {
+                        onSubmitTask(result);
+
+                        redirect({history, link: '/task/2'});
+                    }} />
             </div>
         </section>
     );
@@ -74,6 +81,7 @@ MapText.propTypes = {
     description: PropTypes.string,
     visuals: PropTypes.array,
     result: PropTypes.object,
+    history: PropTypes.object,
     onAddAnswer: PropTypes.func,
     onSubmitTask: PropTypes.func
 };
@@ -110,5 +118,6 @@ export default flow(
         (dispatch) => ({
             onSubmitTask: (answer) => dispatch(addAnswer(answer))
         })
-    )
+    ),
+    withRouter
 )(MapText);
