@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Question from './question.component';
+import BigButton from '../BigButton';
 import './component.scss';
 
 const CardForm = ({description, questions, onSubmit, onChange}) => (
@@ -17,17 +18,22 @@ const CardForm = ({description, questions, onSubmit, onChange}) => (
                 <div className="CardForm__description">{description}</div>
 
                 <div className="CardForm__questions">
-                    {questions && questions.map(({title, options, type}) =>
+                    {questions && questions.map(({title, options, type}, idx) =>
                         (<Question
+                            key={idx}
                             title={title}
                             options={options}
                             type={type}
                             onChange={onChange} />))}
                 </div>
+
+                <div className="CardForm__button">
+                    <BigButton
+                        text="Следующий вопрос"
+                        onClick={onSubmit} />
+                </div>
             </div>
         </div>
-
-        <input type="button" className="button" value="Ответить на вопрос" onClick={onSubmit} />
     </form>);
 
 CardForm.propTypes = {

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="285px" height="71px" viewBox="0 0 285 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="task-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="st2-copy-2" transform="translate(-378.000000, -264.000000)">
+            <g id="Group-9" transform="translate(378.000000, 264.000000)">
+                <g id="Group-4">
+                    <path d="M33.5,4 L251.5,4 C270.001539,4 285,18.9984609 285,37.5 C285,56.0015391 270.001539,71 251.5,71 L33.5,71 C14.9984609,71 2.26578507e-15,56.0015391 0,37.5 C-2.26578507e-15,18.9984609 14.9984609,4 33.5,4 Z" id="Rectangle" fill="#E5E5E5"></path>
+                    <path d="M32.5,0 L252.5,0 C270.449254,-3.29722454e-15 285,14.5507456 285,32.5 C285,50.4492544 270.449254,65 252.5,65 L32.5,65 C14.5507456,65 2.19814969e-15,50.4492544 0,32.5 C-2.19814969e-15,14.5507456 14.5507456,3.29722454e-15 32.5,0 Z" id="Rectangle" fill="#4E9460"></path>
+                    <rect id="Rectangle" fill="#45AC50" x="6" y="3" width="277" height="59" rx="29.5"></rect>
+                    <rect id="Rectangle" fill="#A3D566" x="3" y="0" width="277" height="59" rx="29.5"></rect>
+                    <path d="M35,3 L252,3 C267.463973,3 280,15.536027 280,31 C280,46.463973 267.463973,59 252,59 L35,59 C19.536027,59 7,46.463973 7,31 C7,15.536027 19.536027,3 35,3 Z" id="Rectangle" fill="#7DC349"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
