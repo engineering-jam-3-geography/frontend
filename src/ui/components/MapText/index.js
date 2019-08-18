@@ -47,10 +47,10 @@ const MapText = compose(
                                 paths={visual.location}
                                 center={getPolygonCenter(visual.location)}
                                 options={{
-                                    strokeColor: '#FF0000',
+                                    strokeColor: '#0028AC',
                                     strokeOpacity: 0.8,
                                     strokeWeight: 2,
-                                    fillColor: '#FF0000',
+                                    fillColor: '#0028AC',
                                     fillOpacity: 0.35
                                 }}
                                 onAnswer={onAnswer} />

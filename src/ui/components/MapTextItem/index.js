@@ -16,12 +16,15 @@ const MapTextItem = ({
     center,
     isOpened,
     isFocused,
+    isHovered,
     value,
     location,
     onOpen,
     onChange,
     onFocus,
     onBlur,
+    onOver,
+    onOut,
     onAnswer
 }) => {
     const fieldClass = Classnames({
@@ -33,8 +36,14 @@ const MapTextItem = ({
         <React.Fragment>
             <Polygon
                 paths={paths}
-                options={options}
-                onClick={onOpen} />
+                options={{
+                    ...options,
+                    strokeOpacity: (isHovered || isOpened) ? 0.8 : 0,
+                    fillOpacity: (isHovered || isOpened) ? 0.35 : 0
+                }}
+                onClick={onOpen}
+                onMouseOver={onOver}
+                onMouseOut={onOut} />
 
             {isOpened && (
                 <InfoBox
@@ -78,6 +87,7 @@ MapTextItem.propTypes = {
     options: PropTypes.object,
     isOpened: PropTypes.bool,
     isFocused: PropTypes.bool,
+    isHovered: PropTypes.bool,
     value: PropTypes.string,
     location: PropTypes.string,
     center: PropTypes.object,
@@ -85,7 +95,9 @@ MapTextItem.propTypes = {
     onAnswer: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
-    onBlur: PropTypes.func
+    onBlur: PropTypes.func,
+    onOver: PropTypes.func,
+    onOut: PropTypes.func
 };
 
 export default flow(
@@ -93,7 +105,9 @@ export default flow(
         () => ({
             isOpened: false,
             value: '',
-            location: ''
+            location: '',
+            isFocused: false,
+            isHovered: false
         }),
         {
             onOpen: () => (event = {}) => {
@@ -112,6 +126,12 @@ export default flow(
             }),
             onChange: () => (event) => ({
                 value: event.target.value
+            }),
+            onOver: () => () => ({
+                isHovered: true
+            }),
+            onOut: () => () => ({
+                isHovered: false
             })
         }
     )
