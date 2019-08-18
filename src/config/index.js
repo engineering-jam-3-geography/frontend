@@ -1,3 +1,5 @@
+const basename = '/user/';
+
 module.exports = {
     api: {
         headers: {
@@ -8,5 +10,6 @@ module.exports = {
             submit: '/submit'
         }
     },
-    root: 'root'
+    root: 'root',
+    basename
 };
