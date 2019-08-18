@@ -38,7 +38,8 @@ $BigButton: '.BigButton';
         font-family: map-get($font-family, bold);
         font-size: map-get($font-size, small);
         line-height: map-get($line-height, prelittle);
-        color: map-get($colors, white);
+        color: rgba(map-get($colors, white), 0.6);
+        text-transform: uppercase;
     }
 
     &__content {

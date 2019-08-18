@@ -11,6 +11,7 @@ const MyMapComponent = ({defaultOptions, questions, description, onSubmit, onCha
 
         <div className="card">
             <CardForm
+                title="Задание 2 из 2"
                 description={description}
                 questions={questions}
                 onSubmit={onSubmit}

@@ -5,11 +5,11 @@ import Question from './question.component';
 import BigButton from '../BigButton';
 import './component.scss';
 
-const CardForm = ({description, questions, onSubmit, onChange}) => (
+const CardForm = ({title, description, questions, onSubmit, onChange}) => (
     <form className="CardForm">
         <div className="CardForm__header">
             <div className="CardForm__title">
-                Задание
+                {title}
             </div>
         </div>
 
@@ -18,10 +18,10 @@ const CardForm = ({description, questions, onSubmit, onChange}) => (
                 <div className="CardForm__description">{description}</div>
 
                 <div className="CardForm__questions">
-                    {questions && questions.map(({title, options, type}, idx) =>
+                    {questions && questions.map(({title: qTitle, options, type}, idx) =>
                         (<Question
                             key={idx}
-                            title={title}
+                            title={qTitle}
                             options={options}
                             type={type}
                             onChange={onChange} />))}
@@ -37,6 +37,7 @@ const CardForm = ({description, questions, onSubmit, onChange}) => (
     </form>);
 
 CardForm.propTypes = {
+    title: PropTypes.string,
     description: PropTypes.string,
     questions: PropTypes.array,
     onSubmit: PropTypes.func,

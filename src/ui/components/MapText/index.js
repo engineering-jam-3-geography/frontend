@@ -72,6 +72,7 @@ const MapText = compose(
 
             <div className="MapText__task">
                 <CardForm
+                    title="Задание 1 из 2"
                     description={description}
                     onSubmit={() => {
                         onSubmitTask(result);
