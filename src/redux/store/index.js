@@ -5,8 +5,13 @@ import thunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {createLogger} from 'redux-logger';
 import rootReducer from '../reducers';
+import config from '../../config';
 
-const history = createBrowserHistory();
+const {basename = ''} = config;
+
+const history = createBrowserHistory({
+    basename
+});
 const router = routerMiddleware(history);
 const middleware = [router, thunk];
 

@@ -1,4 +1,4 @@
-const basename = '/user/';
+const basename = '/frontend/';
 
 module.exports = {
     api: {
