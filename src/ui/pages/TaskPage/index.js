@@ -4,7 +4,7 @@ import flow from 'lodash/flow';
 import find from 'lodash/find';
 import {connect} from 'react-redux';
 import Layout from '../../components/Layout';
-import MapText from '../../components/MapText';
+import TaskContainer from '../../components/select-task-component';
 
 /**
  * Renders task page
@@ -20,7 +20,7 @@ const TaskPage = ({
         <Layout
             disableHeader
             disableFooter>
-            <MapText {...currentTask} />
+            <TaskContainer task={currentTask} />
         </Layout>
     );
 };
