@@ -7,6 +7,7 @@ import {compose, withProps, withStateHandlers} from 'recompose';
 import {connect} from 'react-redux';
 import {withGoogleMap, GoogleMap} from 'react-google-maps';
 import MapTextItem from '../MapTextItem';
+import CardForm from './../card-form';
 import getPolygonCenter from '../../utils/getPolygonCenter';
 import {addAnswer} from '../../../redux/actions/answers';
 import './index.scss';
@@ -20,11 +21,11 @@ const MapText = compose(
     withGoogleMap
 )(({
     id,
-    // description,
-    // interactions,
-    // level,
+    description,
     visuals,
-    onAnswer
+    result,
+    onAnswer,
+    onSubmitTask
 }) => {
     const componentClass = Classnames({
         MapText: true
@@ -58,17 +59,23 @@ const MapText = compose(
                     }
                 </GoogleMap>
             </div>
+
+            <div className="MapText__task">
+                <CardForm
+                    description={description}
+                    onSubmit={() => onSubmitTask(result)} />
+            </div>
         </section>
     );
 });
 
 MapText.propTypes = {
     id: PropTypes.string,
-    // description: PropTypes.string,
-    // interactions: PropTypes.array,
-    // level: PropTypes.number,
+    description: PropTypes.string,
     visuals: PropTypes.array,
-    onAddAnswer: PropTypes.func
+    result: PropTypes.object,
+    onAddAnswer: PropTypes.func,
+    onSubmitTask: PropTypes.func
 };
 
 export default flow(
