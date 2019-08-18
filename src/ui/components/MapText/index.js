@@ -13,12 +13,13 @@ import getPolygonCenter from '../../utils/getPolygonCenter';
 import {addAnswer} from '../../../redux/actions/answers';
 import redirect from '../../utils/redirect';
 import './index.scss';
+import mapStyle from './mapStyle';
 
 const MapText = compose(
     withProps({
         loadingElement: <div style={{height: '100%'}} />,
         containerElement: <div style={{height: '100%'}} />,
-        mapElement: <div style={{height: '100%'}} />,
+        mapElement: <div style={{height: '100%'}} />
     }),
     withGoogleMap
 )(({
@@ -42,7 +43,8 @@ const MapText = compose(
             <div className="MapText__map">
                 <GoogleMap
                     defaultZoom={4}
-                    defaultCenter={globalCenter}>
+                    defaultCenter={globalCenter}
+                    defaultOptions={{styles: mapStyle}}>
                     {
                         visuals.map((visual, idx) => (
                             <MapTextItem
