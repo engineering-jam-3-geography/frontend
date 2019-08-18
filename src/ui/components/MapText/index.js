@@ -44,7 +44,12 @@ const MapText = compose(
                 <GoogleMap
                     defaultZoom={4}
                     defaultCenter={globalCenter}
-                    defaultOptions={{styles: mapStyle}}>
+                    defaultOptions={{
+                        styles: mapStyle,
+                        mapTypeControl: false,
+                        fullscreenControl: false,
+                        streetViewControl: false
+                    }}>
                     {
                         visuals.map((visual, idx) => (
                             <MapTextItem
@@ -67,6 +72,7 @@ const MapText = compose(
 
             <div className="MapText__task">
                 <CardForm
+                    title="Задание 1 из 2"
                     description={description}
                     onSubmit={() => {
                         onSubmitTask(result);

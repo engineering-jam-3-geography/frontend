@@ -7,6 +7,7 @@ $BigButton: '.BigButton';
     position: relative;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     height: 71px;
     padding-left: 10px;
     padding-right: 10px;
@@ -32,9 +33,10 @@ $BigButton: '.BigButton';
     &__text {
         position: relative;
         font-family: map-get($font-family, bold);
-        font-size: map-get($font-size, medium);
+        font-size: map-get($font-size, premedium);
         line-height: map-get($line-height, prelittle);
         color: map-get($colors, white);
+        text-align: center;
         z-index: 2;
     }
 }
