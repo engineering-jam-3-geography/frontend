@@ -44,6 +44,7 @@ class GoogleContainer extends Component {
                 onChange={this.handleRadioChange}
                 onSubmit={this.handleSubmit}
                 markup={this.state.task.markup}
+                description={this.state.task.description}
             />
         );
     }
