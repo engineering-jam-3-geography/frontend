@@ -19,9 +19,7 @@
         "test": "jest",
         "precommit": "npm run eslint && npm run stylelint",
         "styleguidist:start": "npx styleguidist server",
-        "styleguidist:build": "npx styleguidist build",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d public"
+        "styleguidist:build": "npx styleguidist build"
     },
     "license": "MIT",
     "dependencies": {

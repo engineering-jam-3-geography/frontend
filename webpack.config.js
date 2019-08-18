@@ -27,7 +27,7 @@ module.exports = {
 
     output: {
         path: PATHS.build,
-        filename: 'js/[name].js',
+        filename: 'js/[name].[hash].js',
         publicPath: '/'
     },
 
@@ -168,7 +168,7 @@ if (NODE_ENV === 'production') {
 
     module.exports.plugins.push(
         new MiniCssExtractPlugin({
-            filename: 'css/[name].css',
+            filename: 'css/[name].[hash].css',
         })
     );
 
