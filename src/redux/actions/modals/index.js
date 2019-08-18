@@ -17,3 +17,8 @@ export const hidePasswordModal = () => ({
     type: actionTypes.HIDE_PASSWORD_MODAL,
     payload: ''
 });
+
+export const saveAnswer = (answer) => ({
+    type: actionTypes.SAVE_ANSWER,
+    payload: answer,
+});
