@@ -2,10 +2,12 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import flow from 'lodash/flow';
+import {withRouter} from 'react-router-dom';
 
 import MapContainer from './card-task.component';
 
 import {defaultStyles, getTask, getQuestions} from './utils';
+import redirect from '../../utils/redirect';
 
 import {saveAnswer} from '../../../redux/actions/modals';
 
@@ -26,9 +28,11 @@ class GoogleContainer extends Component {
     }
 
     handleSubmit() {
-        const {onSave} = this.props;
+        const {onSave, history} = this.props;
         const {radioValue, task} = this.state;
+
         onSave({answer: radioValue, taskId: task.id});
+        redirect({history, link: '/result'});
     }
 
     render() {
@@ -44,14 +48,14 @@ class GoogleContainer extends Component {
                 onChange={this.handleRadioChange}
                 onSubmit={this.handleSubmit}
                 markup={this.state.task.markup}
-                description={this.state.task.description}
-            />
+                description={this.state.task.description} />
         );
     }
 }
 
 GoogleContainer.propTypes = {
     onSave: PropTypes.func.isRequired,
+    history: PropTypes.object
 };
 
 export default flow(
@@ -60,5 +64,6 @@ export default flow(
         (dispatch) => ({
             onSave: (answer) => dispatch(saveAnswer(answer))
         })
-    )
+    ),
+    withRouter
 )(GoogleContainer);
