@@ -2,8 +2,7 @@
 import tasks from './tasks';
 
 const initialState = {
-    list: tasks,
-    activeTaskId: ''
+    list: tasks
 };
 
 /**
