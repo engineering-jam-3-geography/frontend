@@ -44,7 +44,12 @@ const MapText = compose(
                 <GoogleMap
                     defaultZoom={4}
                     defaultCenter={globalCenter}
-                    defaultOptions={{styles: mapStyle}}>
+                    defaultOptions={{
+                        styles: mapStyle,
+                        mapTypeControl: false,
+                        fullscreenControl: false,
+                        streetViewControl: false
+                    }}>
                     {
                         visuals.map((visual, idx) => (
                             <MapTextItem
