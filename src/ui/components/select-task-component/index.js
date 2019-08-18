@@ -1,1 +1,1 @@
-export {default} from './select-task.container.js';
+export {default} from './select-task.container';

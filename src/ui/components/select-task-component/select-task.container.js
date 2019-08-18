@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import {renderTaskByType} from './utils';
 
@@ -14,5 +15,9 @@ class SelectContainer extends Component {
         return renderTaskByType(task, taskType);
     }
 }
+
+SelectContainer.propTypes = {
+    task: PropTypes.object
+};
 
 export default SelectContainer;
