@@ -8,8 +8,7 @@ const MyMapComponent = ({defaultOptions}) => (
     <GoogleMap
         defaultOptions={defaultOptions}
         defaultZoom={4}
-        defaultCenter={{lat: 53.904317, lng: 27.586564}}
-    >
+        defaultCenter={{lat: 53.904317, lng: 27.586564}}>
         {
             // taskType === 'ATTACH' &&
             //     (<Polyline
