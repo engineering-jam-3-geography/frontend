@@ -43,7 +43,12 @@ class GoogleContainer extends Component {
                 loadingElement={<div style={{height: '100%'}} />}
                 containerElement={<div style={{height: '100%', width: '100%'}} />}
                 mapElement={<div style={{height: '100%'}} />}
-                defaultOptions={{styles: defaultStyles}}
+                defaultOptions={{
+                    styles: defaultStyles,
+                    mapTypeControl: false,
+                    fullscreenControl: false,
+                    streetViewControl: false
+                }}
                 questions={questions}
                 onChange={this.handleRadioChange}
                 onSubmit={this.handleSubmit}
