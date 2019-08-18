@@ -51,7 +51,7 @@ $BigButton: '.BigButton';
     &__contentInner {
         position: relative;
         width: 100%;
-        padding: 30px 30px;
+        padding: 30px;
         border-bottom-left-radius: 29px;
         border-bottom-right-radius: 29px;
         background-color: map-get($colors, white);
