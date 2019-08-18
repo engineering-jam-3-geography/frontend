@@ -53,8 +53,7 @@ class GoogleContainer extends Component {
                 lineEnd={lineEnd}
                 onCancelSelectionClick={this.onCancelSelectionClick}
                 handleMouseMove={this.handleMouseMove}
-                lineEndTemp={lineEndTemp}
-            />
+                lineEndTemp={lineEndTemp} />
         );
     }
 }
